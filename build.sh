@@ -5,7 +5,7 @@ cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
 
 set -x
 
-docker build --pull -t gosu .
+docker build --pull -t gosu:1.22.1 .
 
 rm -f gosu* SHA256SUMS*
 docker run --rm gosu sh -c 'cd /go/bin && tar -c gosu*' | tar -xv
